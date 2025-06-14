@@ -1,6 +1,7 @@
-package com.beesion.ms.test.repository;
+package com.beesion.repository;
 
-import com.beesion.ms.model.Address;
+
+import com.beesion.model.Address;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 

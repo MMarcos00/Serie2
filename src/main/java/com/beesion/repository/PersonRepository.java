@@ -1,8 +1,7 @@
-package com.beesion.ms.test.repository;
-
-import com.beesion.ms.model.Person;
+package com.beesion.repository;
 
 
+import com.beesion.model.Person;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 

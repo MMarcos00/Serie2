@@ -1,21 +1,29 @@
-package com.beesion.ms.model;
+package com.beesion.model;
 
+import com.beesion.model.Person;
 import jakarta.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Address {
+public class Address implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String street;
     private String city;
-    private String zip;
 
     @ManyToOne
-    @JoinColumn(name = "person_id")
-    private Person person;
+    private Person person; // ✅ ESTA es la línea que te faltaba
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
     public Long getId() {
         return id;
@@ -39,21 +47,5 @@ public class Address {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getZip() {
-        return zip;
-    }
-
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
     }
 }
