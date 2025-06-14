@@ -15,7 +15,7 @@ public class Address implements Serializable {
     private String city;
 
     @ManyToOne
-    private Person person; // ✅ ESTA es la línea que te faltaba
+    private Person person;
 
     public Person getPerson() {
         return person;
